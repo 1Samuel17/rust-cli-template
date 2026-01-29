@@ -1,7 +1,7 @@
 use anyhow::Result;
 use clap::Parser;
 
-/// A template Rust CLI application
+/// A template for Rust CLI applications
 #[derive(Parser, Debug)]
 #[command(name = "rust-cli-template")]
 #[command(version, about, long_about = None)]
