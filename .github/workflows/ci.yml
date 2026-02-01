@@ -83,6 +83,7 @@ jobs:
     permissions:
       contents: read
       issues: write
+      security-events: write
     steps:
       - uses: actions/checkout@v4
       
