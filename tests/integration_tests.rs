@@ -39,4 +39,4 @@
 // fn test_version_flag() {
 //     let mut cmd = assert_cmd::Command::cargo_bin("rust-cli-template").unwrap();
 //     cmd.arg("--version").assert().success().stdout(predicate::str::contains("rust-cli-template"));
-}
+// }
