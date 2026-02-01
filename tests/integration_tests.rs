@@ -3,13 +3,13 @@ use predicates::prelude::*;
 
 #[test]
 fn test_default_greeting() {
-    let mut cmd = Command::cargo_bin("rust-cli-template").unwrap();
+    let mut cmd = cargo::cargo_bin_cmd!("rust-cli-template").unwrap();
     cmd.assert().success().stdout(predicate::str::contains("Hello, World!"));
 }
 
 #[test]
 fn test_custom_name() {
-    let mut cmd = Command::cargo_bin("rust-cli-template").unwrap();
+    let mut cmd = cargo::cargo_bin_cmd!("rust-cli-template").unwrap();
     cmd.arg("--name")
         .arg("Rust")
         .assert()
@@ -19,7 +19,7 @@ fn test_custom_name() {
 
 #[test]
 fn test_verbose_flag() {
-    let mut cmd = Command::cargo_bin("rust-cli-template").unwrap();
+    let mut cmd = cargo::cargo_bin_cmd!("rust-cli-template").unwrap();
     cmd.arg("--verbose")
         .assert()
         .success()
@@ -28,7 +28,7 @@ fn test_verbose_flag() {
 
 #[test]
 fn test_help_flag() {
-    let mut cmd = Command::cargo_bin("rust-cli-template").unwrap();
+    let mut cmd = cargo::cargo_bin_cmd!("rust-cli-template").unwrap();
     cmd.arg("--help")
         .assert()
         .success()
@@ -37,6 +37,6 @@ fn test_help_flag() {
 
 #[test]
 fn test_version_flag() {
-    let mut cmd = Command::cargo_bin("rust-cli-template").unwrap();
+    let mut cmd = cargo::cargo_bin_cmd!("rust-cli-template").unwrap();
     cmd.arg("--version").assert().success().stdout(predicate::str::contains("rust-cli-template"));
 }
