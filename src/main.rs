@@ -6,7 +6,6 @@ use clap::{Parser, Subcommand};
 #[command(name = "rust-cli-template")]
 #[command(version, about, long_about = None)]
 struct Cli {
-    
     /// Subcommand to run
     #[command(subcommand)]
     command: Option<Commands>,
