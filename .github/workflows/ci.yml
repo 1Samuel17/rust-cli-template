@@ -84,6 +84,7 @@ jobs:
       contents: read
       issues: write
       security-events: write
+      checks: write
     steps:
       - uses: actions/checkout@v4
       
@@ -91,4 +92,3 @@ jobs:
         uses: rustsec/audit-check@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          deny: warnings  # Optional: fail on warnings
